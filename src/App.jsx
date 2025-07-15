@@ -2,21 +2,8 @@ import './App.css'
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-
-//special code here
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer'; 
@@ -29,46 +16,121 @@ import NewsPage from './pages/NewsPage/NewsPage';
 import ElectivesPage from './pages/Electives/ElectivesPage';
 import ConferencePage from './pages/Conference/ConferencePage';
 
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+//special code here
+
 function App() {
 
-  const [name, setName] = useState()
+
+  const [email, setEmail] = useState('');
+  const [passowrd, setPassword] = useState('');
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
-    async function testFirestore() {
-      const docRef = doc(db, "AppCollection", "AppDocument");
-      const docSnap = await getDoc(docRef);
-
-      await updateDoc(docRef, {
-      age: "78", 
-      name: "mat Traboslsi++"
-      })
-
-      if(docSnap.exists()){
-        setName(docSnap.data().name)
-      } else {
-        console.log("no such document!")
+    // check the user's authentication state when the app loads
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
+      if(currentUser){
+        //user is signed in
+        setUser(currentUser);
+      }else{
+        // user is signed out
+        setUser(null);
       }
-    }
-    testFirestore();
-  }, []);
+    })
+
+    return() => unsubscribe();
+  })
+
+  const signUp =() => {
+    createUserWithEmailAndPassword(auth, email, passowrd)
+    .then(userCredential => {
+      setUser(userCredential.user);
+      console.log('user signed up:', userCredential.user);
+    })
+    .catch(error => {
+      console.error('Error signing up: ', error);
+    });
+  }
+
+  const signIn =() => {
+    signInWithEmailAndPassword(auth, email, passowrd)
+    .then(userCredential => {
+      setUser(userCredential.user);
+      console.log('user signed IN:', userCredential.user);
+    })
+    .catch(error => {
+      console.error('Error signing in: ', error);
+    });
+  }
+
+  const logOut = () => {
+    signOut(auth)
+    .then(() => {
+      setUser(null);
+      console.log('User signed out');
+    })
+    .catch(error =>{
+      console.error('Error signing out:', error);
+    });
+  }
+
 
   return (
-    <Router>
-      <div className="back__color"></div>
-      <Header />
-      <NewsWrap />
+    <>
+      <p>Firestore Authientication</p>
+
+      <div>
+
+        {
+          !user && (
+            <>
+              <input type="text" placeholder='Email' value={email} onChange={(event) => setEmail(event.target.value)} />
+              <input type="password" placeholder='Passowrd' value={passowrd} onChange={(event) => setPassword(event.target.value)}/>
+              <button onClick={signUp}>Sign Up</button>
+              <button onClick={signIn}>Sign IN</button>
+            </>
+          )
+        }
         
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/mission' element={<MissionPage />} />
-          <Route path='/members' element={<MembersPage />} />
-          <Route path='/news' element={<NewsPage />} />
-          <Route path='/electives' element={<ElectivesPage />} />
-          <Route path='/conference' element={<ConferencePage />} />
-          <Route path="*" element={<h2>404 - Page {name}Not Found</h2>} />
-        </Routes>
+      </div>
+      {
+        user && (
+          <div>
+            <p>Logged in as: {user.email}</p>
+            <button onClick={logOut}>Sign Out</button>
+          </div>
+        )
+      }
+    </>
+
+    // <Router>
+    //   <div className="back__color"></div>
+    //   <Header />
+    //   <NewsWrap />
+    //     <Routes>
+    //       <Route path='/' element={<HomePage />} />
+    //       <Route path='/mission' element={<MissionPage />} />
+    //       <Route path='/members' element={<MembersPage />} />
+    //       <Route path='/news' element={<NewsPage />} />
+    //       <Route path='/electives' element={<ElectivesPage />} />
+    //       <Route path='/conference' element={<ConferencePage />} />
+    //       <Route path="*" element={<h2>404 - Page {name}Not Found</h2>} />
+    //     </Routes>
         
-      <Footer />
-    </Router>
+    //   <Footer />
+    // </Router>
   )
 }
 
