@@ -45,6 +45,9 @@ body {
   background-color: var(--white-color);
   height: 100%;
 }
+.white__space{
+  min-height: 580px;
+}
 .main{
   min-height: 100%;
 
@@ -577,7 +580,7 @@ here ===========================================================================
 
 }
  .title{
-    width: 100%;
+    width: 100% ;
     text-align: center;
     margin: auto;
     
@@ -776,11 +779,9 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 
-
-
 }
 .members__wrapper .blog__section .title h2{
-  text-align: start;
+  text-align: center;
 }
 
 .members__wrapper .card__list{
@@ -830,7 +831,8 @@ background-color: rgba(255, 255, 255, 0.8);
 text-align: center;
 font-size: 18px;
 border-radius: 3px;
-padding: 70px 40px;
+padding: 100px 40px;
+width: 100%;
 }
 /* 
 about

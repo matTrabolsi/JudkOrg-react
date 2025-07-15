@@ -24,6 +24,10 @@ import Header from './components/Header/Header';
 import NewsWrap from './components/NewsWrap/NewsWrap';
 import HomePage from './pages/HomePage/HomePage';
 import MissionPage from './pages/MissionPage/MissionPage'
+import MembersPage from './pages/MembersPage/MembersPage';
+import NewsPage from './pages/NewsPage/NewsPage';
+import ElectivesPage from './pages/Electives/ElectivesPage';
+import ConferencePage from './pages/Conference/ConferencePage';
 
 function App() {
 
@@ -56,6 +60,10 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/mission' element={<MissionPage />} />
+          <Route path='/members' element={<MembersPage />} />
+          <Route path='/news' element={<NewsPage />} />
+          <Route path='/electives' element={<ElectivesPage />} />
+          <Route path='/conference' element={<ConferencePage />} />
           <Route path="*" element={<h2>404 - Page {name}Not Found</h2>} />
         </Routes>
         

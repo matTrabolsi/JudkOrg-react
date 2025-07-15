@@ -23,7 +23,7 @@ function Footer() {
                     London, England
                 </p>
             </div>
-            <div className="footer__print">© 2025 JDUK. All rights reserved.</div>
+            <div className="footer__print">JDUK. All rights reserved.</div>
         </footer>
     );
 }

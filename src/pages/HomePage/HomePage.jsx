@@ -19,9 +19,8 @@ function HomePage() {
         });
         const hiddenElements = document.querySelectorAll('.card');
         hiddenElements.forEach((el) => observer.observe(el));
-
-
     }, []); 
+
     return (
         <main className="main">
             <div id="app-content">
