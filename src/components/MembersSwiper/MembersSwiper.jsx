@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import Swiper from "swiper";
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
 function MembersSwiper() {
         useEffect(() => {

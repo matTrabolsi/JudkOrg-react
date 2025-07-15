@@ -84,7 +84,7 @@ function Header() {
         <header className="header" id="header">
             <div className="container logo__section">
                 <Link to="/">
-                    <img id="logo__scroll" src="/src/assets/logo.jpeg" className="logo" alt="Association Logo" />
+                    <img id="logo__scroll" src="/assets/logo.jpeg" className="logo" alt="Association Logo" />
                 </Link>
                 <Link to="/" id="title__scroll" className="logo__title">
                     The Association of Jordanian Doctors in the United Kingdom

@@ -49,7 +49,7 @@ function App() {
 
   return (
     <Router>
-      <div class="back__color">{name}</div>
+      <div className="back__color">{name}</div>
       <Header />
       <NewsWrap />
         

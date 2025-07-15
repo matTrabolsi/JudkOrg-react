@@ -2,14 +2,14 @@ import React from "react";
 
 function MissionPage() {
     return (
-        <main class="main">
+        <main className="main">
             <div id="app-content">
-                <div class="about__container">
-                    <div class="about__heading">
+                <div className="about__container">
+                    <div className="about__heading">
                         <h1>Our Mission</h1>
                     </div>
-                    <div class="wrapper">
-                        <div class="about__content">
+                    <div className="wrapper">
+                        <div className="about__content">
                             <h2>Empowering Jordanian Doctors in the UK</h2>
                             <p>
                                 Established in 2023, the Association of
@@ -26,9 +26,9 @@ function MissionPage() {
                                 and professional journey of Jordanian doctors
                                 within the UK's healthcare industry.
                             </p>
-                            <a href="https://buy.stripe.com/test_00waEQ3gS3QRdlB6oO8Ra00" class="about__btn">Join Us Today</a>
+                            <a href="https://buy.stripe.com/test_00waEQ3gS3QRdlB6oO8Ra00" className="about__btn">Join Us Today</a>
                         </div>
-                        <div class="about__image">
+                        <div className="about__image">
                             <img src="/src/assets/doctor.jpg" alt=""></img>
                         </div>
                     </div>
