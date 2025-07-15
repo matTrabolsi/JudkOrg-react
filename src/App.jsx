@@ -16,11 +16,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-
-
-
-
-
+//special code here
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer'; 
+import Header from './components/Header/Header';
+import NewsWrap from './components/NewsWrap/NewsWrap';
+import HomePage from './pages/HomePage/HomePage';
+import MissionPage from './pages/MissionPage/MissionPage'
 
 function App() {
 
@@ -45,11 +48,19 @@ function App() {
   }, []);
 
   return (
-    <>
-      
-        <p>{name}</p>
-
-    </>
+    <Router>
+      <div class="back__color">{name}</div>
+      <Header />
+      <NewsWrap />
+        
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/mission' element={<MissionPage />} />
+          <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+        </Routes>
+        
+      <Footer />
+    </Router>
   )
 }
 
