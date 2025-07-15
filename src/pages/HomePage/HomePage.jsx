@@ -33,7 +33,7 @@ function HomePage() {
                         playsInline
                         className="background__video"
                     >
-                        <source src="/src/assets/video.mp4" type="video/mp4" />
+                        <source src="/video.mp4" type="video/mp4" />
                     </video>
                     <div className="content">
                         <h1>WELCOME TO JDUK</h1>
