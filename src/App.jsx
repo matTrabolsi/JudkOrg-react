@@ -17,13 +17,15 @@ import NewsPage from './pages/NewsPage/NewsPage';
 import ElectivesPage from './pages/Electives/ElectivesPage';
 import ConferencePage from './pages/Conference/ConferencePage';
 import LoginPage from './pages/LoginPage/LoginPage'; // Import the new LoginPage
-
+import DashboardPage from './pages/DashboardPage/DashboardPage';
 // Import Auth Components (Note: These are used within LoginPage, or can be displayed globally if needed)
 // import AuthForm from './components/AuthForm/AuthForm';
 // import AuthStatus from './components/AuthStatus/AuthStatus';
 
 // Import Private Route
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AdminMembersPage from './pages/DashboardPage/AdminMemebersPage/AdminMembersPage';
+import DashboardLayout from './pages/DashboardPage/DashboardLayout';
 
 function App() {
   return (
@@ -41,21 +43,21 @@ function App() {
           <Route path='/login' element={<LoginPage />} /> {/* Route for the login/signup page */}
 
           {/* Protected routes that require authentication */}
-          <Route path='/members' element={
-            <PrivateRoute>
-              <MembersPage />
-            </PrivateRoute>
-          } />
-          <Route path='/electives' element={
-            <PrivateRoute>
-              <ElectivesPage />
-            </PrivateRoute>
-          } />
-          <Route path='/conference' element={
-            <PrivateRoute>
-              <ConferencePage />
-            </PrivateRoute>
-          } />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute> {/* Protect the entire dashboard */}
+                <DashboardLayout /> {/* This component will render child routes */}
+              </PrivateRoute>
+            }
+          >
+            <Route index element={<DashboardPage />} />
+            <Route path="admin-members" element={<AdminMembersPage />} /> {/* 'members' is relative to '/dashboard' */}
+          </Route>
+
+          <Route path='/members' element={<MembersPage />} />
+          <Route path='/electives' element={<ElectivesPage />} />
+          <Route path='/conference' element={<ConferencePage />} />
           <Route path="*" element={<h2 style={{textAlign: 'center', marginTop: '50px'}}>404 - Page Not Found</h2>} />
         </Routes>
 

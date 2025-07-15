@@ -13,7 +13,7 @@ const AuthForm = () => {
         try {
             await signUp(email, password);
             console.log('User signed up successfully!');
-            navigate('/');
+            navigate('/Dashboard');
         } catch (error) {
             console.error('Error signing up: ', error.message);
             // Implement user-friendly error display here
@@ -24,7 +24,7 @@ const AuthForm = () => {
         try {
             await signIn(email, password);
             console.log('User signed in successfully!');
-            navigate('/');
+            navigate('/Dashboard');
         } catch (error) {
             console.error('Error signing in: ', error.message);
             // Implement user-friendly error display here
@@ -91,7 +91,7 @@ const AuthForm = () => {
                 style={{
                     width: '48%',
                     padding: '10px 15px',
-                    backgroundColor: '#3b28a7ff',
+                    backgroundColor: '#23283dff',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
