@@ -40,7 +40,7 @@ function MembersSwiper() {
     }, []); 
     return (
         <div className="members__all" id="homePageMembersSwiper">
-            <img src="/src/assets/memback.jpg" alt="" className="members__img" />
+            <img src="/memback.jpg" alt="" className="members__img" />
             <div className="members__section">
                 <div className="title">
                     <h2>Board Members</h2>
@@ -51,55 +51,55 @@ function MembersSwiper() {
                     <div className="slider__wrapper">
                         <div className="card__list swiper-wrapper">
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Zaid Sabe Eleish</h2>
                                 <p className="user__details">General Practitioner (Family Medicine Consultant)</p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Mr. Ahmad Alaqqad</h2>
                                 <p className="user__details">Senior Urology Trainee</p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Mr. Taher Faydi</h2>
                                 <p className="user__details">Country advisor (Jordan) for the Royal College of Surgeons</p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Rakan Khalifah</h2>
                                 <p className="user__details">Consultant in Emergency Medicine</p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Tariq Altal</h2>
                                 <p className="user__details"></p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Haitham Tumeh</h2>
                                 <p className="user__details"></p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Ghaith Gsous</h2>
                                 <p className="user__details"></p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor2.avif" alt="" className="user__img" />
+                                <img src="/doctor2.avif" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Khalid AlJboor</h2>
                                 <p className="user__details"></p>
                                 <button hidden className="message__button">Message</button>
                             </div>
                             <div className="card__item swiper-slide">
-                                <img src="/src/assets/doctor1.jpeg" alt="" className="user__img" />
+                                <img src="/doctor1.jpeg" alt="" className="user__img" />
                                 <h2 className="user__name">Dr. Hiba Shanti</h2>
                                 <p className="user__details">General Practitioner (Family Medicine Consultant)</p>
                                 <button hidden className="message__button">Message</button>

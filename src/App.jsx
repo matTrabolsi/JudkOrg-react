@@ -49,14 +49,14 @@ function App() {
 
   return (
     <Router>
-      <div className="back__color">{name}</div>
+      <div className="back__color"></div>
       <Header />
       <NewsWrap />
         
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/mission' element={<MissionPage />} />
-          <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+          <Route path="*" element={<h2>404 - Page {name}Not Found</h2>} />
         </Routes>
         
       <Footer />

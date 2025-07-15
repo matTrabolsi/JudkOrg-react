@@ -29,7 +29,7 @@ function MissionPage() {
                             <a href="https://buy.stripe.com/test_00waEQ3gS3QRdlB6oO8Ra00" className="about__btn">Join Us Today</a>
                         </div>
                         <div className="about__image">
-                            <img src="/src/assets/doctor.jpg" alt=""></img>
+                            <img src="/doctor.jpg" alt=""></img>
                         </div>
                     </div>
                 </div>

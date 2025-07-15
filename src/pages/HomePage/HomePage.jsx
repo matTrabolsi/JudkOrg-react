@@ -50,7 +50,7 @@ function HomePage() {
                     <div className="cards">
                         <div className="card">
                             <div className="image__section">
-                                <img src="/src/assets/card1.jpeg" alt="" />
+                                <img src="/card1.jpeg" alt="" />
                             </div>
                             <div className="card__content">
                                 <h3></h3>
@@ -73,7 +73,7 @@ function HomePage() {
                         </div>
                         <div className="card inline">
                             <div className="image__section inline__image">
-                                <img src="/src/assets/card2.jpeg" alt="" />
+                                <img src="/card2.jpeg" alt="" />
                             </div>
                             <div className="card__content">
                                 <h3></h3>
@@ -98,7 +98,7 @@ function HomePage() {
                         </div>
                         <div className="card inline">
                             <div className="image__section inline__image">
-                                <img src="/src/assets/card3.jpeg" alt="" />
+                                <img src="/card3.jpeg" alt="" />
                             </div>
                             <div className="card__content">
                                 <h3></h3>
@@ -123,7 +123,7 @@ function HomePage() {
                         </div>
                         <div className="card">
                             <div className="image__section">
-                                <img src="/src/assets/card4.jpeg" alt="" />
+                                <img src="/card4.jpeg" alt="" />
                             </div>
                             <div className="card__content">
                                 <h3></h3>
