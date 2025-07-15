@@ -31,6 +31,7 @@ function HomePage() {
                         muted
                         playsInline
                         className="background__video"
+                        poster="/poster.png"
                     >
                         <source src="/video.mp4" type="video/mp4" />
                     </video>

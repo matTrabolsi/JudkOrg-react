@@ -35,7 +35,6 @@ function MissionPage() {
                 </div>
             </div>
         </main>
-
     );
 }
 
